@@ -18,20 +18,22 @@ function frequency(numbers){
   const numbersCount = [{1:0}]
   numbers.map(function(sequence){
     return sequence.map(function(ball){
+  
       return numbersCount.map(function(recordedCount){
         const currentRecordedNum = parseInt(Object.keys(recordedCount)[0])
-        console.log('recordedCount.key', " ball ", ball );
+
         if(currentRecordedNum === ball){
-          console.log('object[key]',recordedCount[currentRecordedNum]);
-        //   recordedCount[ball] +=1
-        //   console.log('numbersCount: ', numbersCount);
-        // } else {
-        //   numbersCount.push({ball:1})
-        //
+          recordedCount[ball] +=1
+
+        } else {
+          const newObj = {}
+          newObj[ball] = 1
+
         }
       })
     })
   })
+  console.log('numbersCount', numbersCount[0]);
 }
 
 frequency(rolledNumbers)
